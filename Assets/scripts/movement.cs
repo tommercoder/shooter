@@ -7,14 +7,16 @@ public class movement : MonoBehaviour
     public float speed = 5f;
     public Rigidbody2D rb;
     public Animator animator;
-    
+    public Camera cam;
+    Vector2 mousePosV;
     Vector2 moveVector;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
-
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -22,17 +24,25 @@ public class movement : MonoBehaviour
     {
         moveVector.x = Input.GetAxisRaw("Horizontal");
         moveVector.y= Input.GetAxisRaw("Vertical");
+       
+       ///// animator.SetFloat("Horizontal", moveVector.x);
+        //animator.SetFloat("Vertical", moveVector.y);
+        animator.SetFloat("Speed", moveVector.sqrMagnitude);
 
-        animator.SetFloat("Horizontal", moveVector.x);
-        animator.SetFloat("Vertical", moveVector.y);
-        animator.SetFloat("speed", moveVector.sqrMagnitude);
 
-
-
-        
+        var mousePos = Input.mousePosition;
+        mousePos.z = 10; // select distance = 10 units from the camera
+        Debug.Log(cam.ScreenToWorldPoint(mousePos));
+        mousePosV = cam.ScreenToWorldPoint(mousePos);
     }
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveVector * speed * Time.fixedDeltaTime);
+        
+        Vector2 lookdir = mousePosV - rb.position;
+        float angle = Mathf.Atan2(lookdir.y,lookdir.x) * Mathf.Rad2Deg;
+        rb.rotation = angle;
+
+
     }
 }
