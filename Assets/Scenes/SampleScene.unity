@@ -736,10 +736,10 @@ CapsuleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000014305112, y: -0.15086219}
-  m_Size: {x: 2.5299983, y: 2.529998}
+  m_Offset: {x: -0.27831948, y: -0.106926546}
+  m_Size: {x: 1.2041918, y: 1.6512605}
   m_Direction: 0
 --- !u!1 &871066249
 GameObject:
@@ -994,7 +994,7 @@ GameObject:
   - component: {fileID: 1248640169}
   - component: {fileID: 1248640170}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1062,7 +1062,7 @@ Animator:
   m_GameObject: {fileID: 1248640161}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d3f8c6614f587bc4e81deee8d2c5c7f8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 23f89f9c76dea5056b7b363b0547fbac, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1150,6 +1150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 842670514}
   moveSpeed: 5
+  animator: {fileID: 0}
 --- !u!61 &1248640169
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,15 +15,14 @@ public class Enemy : MonoBehaviour {
 		if (health <= 0)
 		{
 			
-			Die();
-			Destroy(gameObject);
+			StartCoroutine(vey());
 		}
 	}
 
-	void Die ()
-	{
-		Instantiate(deathEffect, transform.position, Quaternion.identity);
+	IEnumerator vey(){
+		yield return new WaitForSeconds(2f);
 		Destroy(gameObject);
 	}
+
 
 }
