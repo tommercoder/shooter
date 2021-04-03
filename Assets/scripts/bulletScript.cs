@@ -7,20 +7,44 @@ public class bulletScript : MonoBehaviour
     public GameObject gitEffect;
     public int damage = 30;
 
+    
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        GameObject effect = Instantiate(gitEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 1f);
-        Destroy(gameObject);
-    }
+    {   
+        //столкнулся ли он с врагом? теги на каждом обьекте есть    
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            GameObject effect = Instantiate(gitEffect, transform.position, Quaternion.identity);
 
+            //Destroy(gameObject);
+
+
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            Debug.Log(collision.gameObject.name);
+            Destroy(effect, 1f);
+            Destroy(gameObject);
+
+        }
+        else
+        {
+            GameObject effect = Instantiate(gitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 2f);
+            Destroy(gameObject);
+
+        }
+    }
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if(enemy != null){
-            enemy.TakeDamage(damage);
-        }
-        Debug.Log(hitInfo.name);
-        Destroy(gameObject);
+     
+       
+    }
+    //nado pridumat kuda postavit esli nie bylo collida
+    IEnumerator waitIfNotCollided()
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(this);
     }
 }

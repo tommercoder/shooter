@@ -501,6 +501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   deathEffect: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &775495981
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,9 +583,12 @@ GameObject:
   - component: {fileID: 842670515}
   - component: {fileID: 842670517}
   - component: {fileID: 842670518}
+  - component: {fileID: 842670519}
+  - component: {fileID: 842670520}
+  - component: {fileID: 842670521}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -723,14 +727,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint1: {fileID: 1532196293}
-  anim: {fileID: 0}
   bullet: {fileID: 4374708027708050069, guid: d27cba99a0b54d4468d5028299714a92, type: 3}
-  all_bullets:
-  - {fileID: 4374708027708050069, guid: d27cba99a0b54d4468d5028299714a92, type: 3}
-  - {fileID: 4514808765048392860, guid: 526d5c4fbec117148a9a102c4ee2c27d, type: 3}
   force1: 20
 --- !u!70 &842670518
 CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842670511}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.20379922, y: -0.07502328}
+  m_Size: {x: 2.9375505, y: 2.9375503}
+  m_Direction: 0
+--- !u!114 &842670519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842670511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42adccfa9672ebf4788d7ee512514d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  firstWave: 0
+  secondWave: 0
+  thirdWave: 0
+--- !u!114 &842670520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842670511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0407f32296c438549a3c441dac0d2afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 0
+--- !u!58 &842670521
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -742,9 +788,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000014305112, y: -0.15086219}
-  m_Size: {x: 2.5299983, y: 2.529998}
-  m_Direction: 0
+  m_Offset: {x: -0.4199435, y: 0.000000050061164}
+  serializedVersion: 2
+  m_Radius: 0.8450571
 --- !u!1 &871066249
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1045,7 @@ GameObject:
   - component: {fileID: 1248640170}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1194,6 +1240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   deathEffect: {fileID: 0}
+  player: {fileID: 842670511}
 --- !u!1 &1532196292
 GameObject:
   m_ObjectHideFlags: 0
