@@ -32,7 +32,7 @@ public class movement : MonoBehaviour
 
         var mousePos = Input.mousePosition;
         mousePos.z = 10; // select distance = 10 units from the camera
-        Debug.Log(cam.ScreenToWorldPoint(mousePos));
+        //Debug.Log(cam.ScreenToWorldPoint(mousePos));
         mousePosV = cam.ScreenToWorldPoint(mousePos);
     }
     private void FixedUpdate()
