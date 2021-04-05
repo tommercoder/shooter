@@ -47,14 +47,18 @@ public class movement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-		if (collision.gameObject.CompareTag("Player"))
+		if (collision.gameObject.CompareTag("enemy"))
 		{
-            Debug.Log(collision.gameObject.name + "@@@@@@");
+            
 			//Debug.Log("enemy collide with player");
 //			player.GetComponent<Rigidbody2D>().AddForce(transform.forward * 2);
 
 			
 		}
+        else if(collision.gameObject.CompareTag("Map"))
+        {
+            Debug.Log(collision.gameObject.name) ;
+        }
 	}
 }
    

@@ -21,7 +21,7 @@ public class bulletScript : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(enemy.damage);
             }
             Debug.Log(collision.gameObject.name);
             Destroy(effect, 1f);
