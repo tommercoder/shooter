@@ -45,4 +45,16 @@ public class movement : MonoBehaviour
 
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+		if (collision.gameObject.CompareTag("Player"))
+		{
+            Debug.Log(collision.gameObject.name + "@@@@@@");
+			//Debug.Log("enemy collide with player");
+//			player.GetComponent<Rigidbody2D>().AddForce(transform.forward * 2);
+
+			
+		}
+	}
 }
+   

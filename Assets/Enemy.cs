@@ -5,8 +5,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
 	public int health = 100;
-	public int damage = 10;
-	public int scoreForDeath;
 	public GameObject deathEffect;
 	public GameObject player;
 	public bool kicked = false;
@@ -52,8 +50,4 @@ public class Enemy : MonoBehaviour {
 			kicked = true;
 			
 
-			
-		}
-	}
-    
 }

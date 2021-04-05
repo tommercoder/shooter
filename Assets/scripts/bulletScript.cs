@@ -13,7 +13,6 @@ public class bulletScript : MonoBehaviour
         //столкнулся ли он с врагом? теги на каждом обьекте есть    
         if (collision.gameObject.CompareTag("enemy"))
         {
-            
             GameObject effect = Instantiate(gitEffect, transform.position, Quaternion.identity);
 
             //Destroy(gameObject);

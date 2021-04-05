@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerHealth : MonoBehaviour
 {
+    [SerializeField] Text countHealthText;
+
     public static playerHealth instance;
     private void Awake()
     {
@@ -16,11 +19,14 @@ public class playerHealth : MonoBehaviour
     {
         maxHealth = 100;
         currentHealth = maxHealth;
+        countHealthText.text = currentHealth.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //countHealthText.text = maxHealth.ToString();
+        countHealthText.text = currentHealth.ToString();
         if(currentHealth<=0)
         {
             die();
