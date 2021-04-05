@@ -28,6 +28,14 @@ public class bulletScript : MonoBehaviour
             Destroy(gameObject);
 
         }
+        else if(collision.gameObject.CompareTag("Map"))
+        {
+            Debug.Log("map collided")
+                ;
+            GameObject effect = Instantiate(gitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 2f);
+            Destroy(gameObject);
+        }
         else
         {
             GameObject effect = Instantiate(gitEffect, transform.position, Quaternion.identity);

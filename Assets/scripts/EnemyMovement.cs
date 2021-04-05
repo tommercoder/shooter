@@ -1,41 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Pathfinding;
 public class EnemyMovement : MonoBehaviour
 {
- 
-    public Transform player;
-    public float moveSpeed = 5f;
-    private Rigidbody2D rb;
-    private Vector2 movement;
-    public float rotate = 0.0f;
 
-    // Start is called before the first frame update
-    void Start()
+    public AIPath aIPath;
+    Vector2 direction;
+
+    private void Update()
     {
-        rb = this.GetComponent<Rigidbody2D>();
+        faceVelocity();
     }
-
-
-    // Update is called once per frame
-    void Update()
+    void faceVelocity()
     {
-        if (player != null)
-        {
-            Vector3 direction = player.position - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            rb.rotation = angle + rotate;
-            direction.Normalize();
-            movement = direction;
-        }
+        direction = aIPath.desiredVelocity;
+        transform.right = direction;
     }
+    //public Transform player;
+    //public float moveSpeed = 5f;
+    //private Rigidbody2D rb;
+    //private Vector2 movement;
+    //public float rotate = 0.0f;
 
-    private void FixedUpdate(){
-        moveCharacter(movement);
-    }
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    rb = this.GetComponent<Rigidbody2D>();
+    //}
 
-    void moveCharacter(Vector2 direction){
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-    }
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    if (player != null)
+    //    {
+    //        Vector3 direction = player.position - transform.position;
+    //        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    //        rb.rotation = angle + rotate;
+    //        direction.Normalize();
+    //        movement = direction;
+    //    }
+    //}
+
+    //private void FixedUpdate(){
+    //    moveCharacter(movement);
+    //}
+
+    //void moveCharacter(Vector2 direction){
+    //    rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+    //}
 }
