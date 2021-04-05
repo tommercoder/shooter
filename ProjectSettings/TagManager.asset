@@ -7,6 +7,7 @@ TagManager:
   - bulletS
   - enemy
   - Map
+  - FirstAid
   layers:
   - Default
   - TransparentFX

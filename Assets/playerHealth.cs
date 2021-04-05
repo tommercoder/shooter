@@ -23,6 +23,19 @@ public class playerHealth : MonoBehaviour
         countHealthText.text = currentHealth.ToString();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+		if(collision.gameObject.CompareTag("FirstAid"))
+        {
+
+            Debug.Log(collision.gameObject.name);
+            currentHealth += 20;
+            Destroy(collision.gameObject);
+
+        }
+	}
+
+
     // Update is called once per frame
     void Update()
     {
@@ -35,8 +48,9 @@ public class playerHealth : MonoBehaviour
     }
     void die()
     {
-        Destroy(gameObject);
+        
         SceneManager.LoadScene("SampleScene");
+        Destroy(gameObject);
         //show score and buttons
         //save score and what we need to save
     }

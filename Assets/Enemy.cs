@@ -38,8 +38,18 @@ public class Enemy : MonoBehaviour
 		//Instantiate(deathEffect, transform.position, Quaternion.identity);
 		statistics.instance.scoreInt += scoreForDeath;
 		statistics.instance.score.text = "score:" + statistics.instance.scoreInt;
+
+		DropItem();
+		
 		Destroy(gameObject);
+
+		
 	}
+
+	void DropItem(){
+		
+	}
+
 	private void FixedUpdate()
 	{
 		if (kicked)
