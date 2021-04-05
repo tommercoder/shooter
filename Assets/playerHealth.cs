@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerHealth : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class playerHealth : MonoBehaviour
     void die()
     {
         Destroy(gameObject);
+        SceneManager.LoadScene("SampleScene");
         //show score and buttons
         //save score and what we need to save
     }
