@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcced9829c16542e8c7280a56ac4280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: {fileID: 1633863766}
   health: 100
   deathEffect: {fileID: 0}
   player: {fileID: 842670511}
@@ -532,6 +533,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &512379780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 512379781}
+  m_Layer: 0
+  m_Name: Prefabs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &512379781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512379780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 58.438354, y: 41.233772, z: -4.5898438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1633863769}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &515790930
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcced9829c16542e8c7280a56ac4280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: {fileID: 0}
   health: 100
   deathEffect: {fileID: 0}
   player: {fileID: 0}
@@ -1535,6 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcced9829c16542e8c7280a56ac4280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: {fileID: 1633863766}
   health: 100
   deathEffect: {fileID: 0}
   player: {fileID: 842670511}
@@ -1709,6 +1743,7 @@ GameObject:
   - component: {fileID: 1428356687}
   - component: {fileID: 1428356688}
   - component: {fileID: 1428356689}
+  - component: {fileID: 1428356690}
   m_Layer: 0
   m_Name: Map1
   m_TagString: Map
@@ -2001,6 +2036,75 @@ PolygonCollider2D:
       - {x: 10, y: -5.951231}
       - {x: 10.04877, y: -4.751372}
       - {x: 9.95123, y: 5.878079}
+--- !u!60 &1428356690
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428356683}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20, y: 12}
+    newSize: {x: 20, y: 12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -2.4656618, y: 3.7533965}
+      - {x: -4.684868, y: 2.6576395}
+      - {x: -5.57111, y: 1.6872405}
+      - {x: -5.618817, y: -1.9245725}
+      - {x: -5.0364547, y: -4.08088}
+      - {x: -4.0550375, y: -5.2737494}
+      - {x: 4.373914, y: -5.165475}
+      - {x: 4.9481487, y: -5.0741773}
+      - {x: 5.265352, y: -4.693508}
+      - {x: 5.1532583, y: -3.8072999}
+      - {x: 4.864531, y: -1.6515077}
+      - {x: 4.7809467, y: -0.6377204}
+      - {x: 5.0364685, y: 0.51586515}
+      - {x: 5.1381598, y: 2.7060108}
+      - {x: 4.9626565, y: 2.695766}
+      - {x: 4.7406106, y: 2.6952822}
+      - {x: 4.7073665, y: 2.6117644}
+      - {x: 4.9735155, y: 2.606885}
+      - {x: 4.9516788, y: 1.6735053}
+      - {x: 4.731174, y: 1.6903956}
+      - {x: 4.724921, y: 0.5036925}
+      - {x: 4.498391, y: -0.25011444}
+      - {x: 4.5322423, y: -3.0115955}
+      - {x: 4.67814, y: -4.074041}
+      - {x: 4.955551, y: -4.275328}
+      - {x: 5.0905366, y: -4.6970162}
+      - {x: 4.9403434, y: -4.9990673}
+      - {x: 4.6243663, y: -5.0820065}
+      - {x: 4.332452, y: -4.9489665}
+      - {x: 0.19238257, y: -4.7465124}
+      - {x: -3.8638868, y: -4.693323}
+      - {x: -4.7462683, y: -3.823731}
+      - {x: -5.1952167, y: -1.3719567}
+      - {x: -5.0903015, y: 1.5185927}
+      - {x: -4.4385495, y: 2.4888031}
+      - {x: -2.3830934, y: 3.4707208}
+      - {x: 2.9301755, y: 3.423705}
+      - {x: 3.187483, y: 3.7229803}
+      - {x: 3.288351, y: 3.4263113}
+      - {x: 3.4172382, y: 3.4081511}
+      - {x: 3.4248629, y: 3.6452954}
+      - {x: 4.250204, y: 3.6486175}
+      - {x: 4.3697844, y: 3.4243464}
+      - {x: 4.41559, y: 3.8536527}
 --- !u!1 &1532196292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,8 +2195,9 @@ GameObject:
   - component: {fileID: 1633863769}
   - component: {fileID: 1633863768}
   - component: {fileID: 1633863767}
+  - component: {fileID: 1633863770}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: BloodSplash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6884,10 +6989,22 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633863766}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 52.42, y: 43.14, z: -4.59}
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: -6.0183563, y: 1.9062271, z: -0.00015640259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 512379781}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &1633863770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633863766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d188bed3be4cf3c88c1a722fbd20c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
