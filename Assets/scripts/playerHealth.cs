@@ -28,9 +28,16 @@ public class playerHealth : MonoBehaviour
 		if(collision.gameObject.CompareTag("FirstAid"))
         {
 
-            Debug.Log(collision.gameObject.name);
-            currentHealth += 20;
-            Destroy(collision.gameObject);
+//            Debug.Log(collision.gameObject.name);
+            if(currentHealth < 100)
+            {
+                currentHealth += 20;
+                Destroy(collision.gameObject);
+            }else{
+
+            }
+
+            
 
         }
 	}
