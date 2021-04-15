@@ -40,7 +40,19 @@ public class Enemy : MonoBehaviour
 		statistics.instance.score.text = "score:" + statistics.instance.scoreInt;
 		Destroy(gameObject);
 	}
-	private void FixedUpdate()
+	public GameObject item;
+    private void OnDestroy()
+    {
+		if(item!=null)
+		if (item.GetComponent<dropBullet>() != null)
+		{
+			item.GetComponent<dropBullet>().count = Random.Range(0, 19);
+			Instantiate(item, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+		}
+		//else
+
+	}
+    private void FixedUpdate()
 	{
 		if (kicked)
 		{

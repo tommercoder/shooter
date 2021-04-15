@@ -14,7 +14,7 @@ public class shooting : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && statistics.instance.bulletsCount > 0)
         {
             shoot();
         }
@@ -24,6 +24,7 @@ public class shooting : MonoBehaviour
     void shoot()
     {
         GameObject bulletG = Instantiate(bullet, firePoint1.position, firePoint1.rotation);
+        statistics.instance.bulletsCount -= 1;
         Rigidbody2D rb = bulletG.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint1.right*force1,ForceMode2D.Impulse);
     }

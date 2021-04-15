@@ -30,11 +30,15 @@ public class bulletScript : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Map"))
         {
-            Debug.Log("map collided")
+           // Debug.Log("map collided")
                 ;
             GameObject effect = Instantiate(gitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 2f);
             Destroy(gameObject);
+        }
+        else if(collision.gameObject.CompareTag("itemDrop"))
+        {
+            //nothing
         }
         else
         {

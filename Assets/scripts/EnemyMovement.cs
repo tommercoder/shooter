@@ -5,49 +5,40 @@ using Pathfinding;
 public class EnemyMovement : MonoBehaviour
 {
 
-    public AIPath aIPath;
-    Vector2 direction;
 
-    private void Update()
+    public Transform player;
+    public float moveSpeed = 5f;
+    private Rigidbody2D rb;
+    private Vector2 movement;
+    public float rotate = 0.0f;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        faceVelocity();
+        rb = this.GetComponent<Rigidbody2D>();
     }
-    void faceVelocity()
+
+
+    // Update is called once per frame
+    void Update()
     {
-        direction = aIPath.desiredVelocity;
-        transform.right = direction;
+        if (player != null)
+        {
+            Vector3 direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            rb.rotation = angle + rotate;
+            direction.Normalize();
+            movement = direction;
+        }
     }
-    //public Transform player;
-    //public float moveSpeed = 5f;
-    //private Rigidbody2D rb;
-    //private Vector2 movement;
-    //public float rotate = 0.0f;
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    rb = this.GetComponent<Rigidbody2D>();
-    //}
+    private void FixedUpdate()
+    {
+        moveCharacter(movement);
+    }
 
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    if (player != null)
-    //    {
-    //        Vector3 direction = player.position - transform.position;
-    //        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    //        rb.rotation = angle + rotate;
-    //        direction.Normalize();
-    //        movement = direction;
-    //    }
-    //}
-
-    //private void FixedUpdate(){
-    //    moveCharacter(movement);
-    //}
-
-    //void moveCharacter(Vector2 direction){
-    //    rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-    //}
+    void moveCharacter(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+    }
 }
