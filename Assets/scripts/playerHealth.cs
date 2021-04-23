@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerHealth : MonoBehaviour
 {
@@ -22,6 +23,26 @@ public class playerHealth : MonoBehaviour
         countHealthText.text = currentHealth.ToString();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+		if(collision.gameObject.CompareTag("FirstAid"))
+        {
+
+//            Debug.Log(collision.gameObject.name);
+            if(currentHealth < 100)
+            {
+                currentHealth += 20;
+                Destroy(collision.gameObject);
+            }else{
+
+            }
+
+            
+
+        }
+	}
+
+
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +55,8 @@ public class playerHealth : MonoBehaviour
     }
     void die()
     {
+        
+        SceneManager.LoadScene("SampleScene");
         Destroy(gameObject);
         //show score and buttons
         //save score and what we need to save

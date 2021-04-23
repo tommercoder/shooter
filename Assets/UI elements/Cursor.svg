@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1000 1000"
+   enable-background="new 0 0 1000 1000"
+   xml:space="preserve"
+   id="svg12"
+   sodipodi:docname="f7d32385a5a9590d3b7bd2d3f5ddfdd6.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"><defs
+   id="defs16" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1043"
+   id="namedview14"
+   showgrid="false"
+   inkscape:zoom="0.236"
+   inkscape:cx="500"
+   inkscape:cy="500"
+   inkscape:window-x="0"
+   inkscape:window-y="262"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg12" />
+<metadata
+   id="metadata2"> Svg Vector Icons : http://www.onlinewebfonts.com/icon <rdf:RDF><cc:Work
+     rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata>
+<g
+   id="g10"
+   style="fill:#ff0000"><g
+     transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)"
+     id="g8"
+     style="fill:#ff0000"><path
+       d="M4693.1,4129c0-485-5.9-881-13.9-881c-9.9,0-101-13.9-203.9-29.7c-645.4-104.9-1227.5-405.9-1702.6-881c-496.9-496.9-801.8-1114.6-900.8-1825.4l-11.9-95H979H100V110v-306.9h881c485,0,881-5.9,881-13.9c0-9.9,13.9-95,29.7-194c225.7-1374,1306.7-2419.3,2708.4-2613.3l93.1-11.9v-881v-879H5000h306.9v879v881l95,11.9c1441.3,200,2526.2,1284.9,2726.2,2728.2l11.9,93h881h879V110v306.9h-879h-881l-11.9,95c-51.5,360.3-150.4,683-308.8,1003.8c-154.4,312.8-338.6,566.2-592,821.6c-496.9,496.9-1114.6,801.8-1825.4,900.8l-95,11.9v881v879H5000h-306.9V4129z M4712.9,2139.3v-415.8h306.9h306.9v415.8V2557l75.2-13.9C6463.1,2361,7278.7,1545.4,7455,492.1l11.9-75.2h-417.7h-415.8V110v-306.9h415.8h417.7l-13.8-73.3C7270.8-1335.3,6465-2141,5401.9-2323.2l-75.2-13.8v417.7v415.8h-306.9h-306.9v-415.8V-2337l-73.3,11.9c-1055.2,176.2-1870.9,991.9-2053,2055l-13.9,73.3h417.7h415.8V110v306.9h-415.8h-417.7l11.9,75.2c152.4,904.8,797.9,1665,1663,1954.1c136.6,47.5,362.3,101,441.5,106.9C4707,2555,4712.9,2460,4712.9,2139.3z"
+       id="path4"
+       style="fill:#ff0000" /><path
+       d="M4823.8,622.8c-138.6-43.5-295-203.9-336.6-344.5c-17.8-59.4-31.7-138.6-31.7-178.2c0-297,257.4-554.3,554.3-554.3c297,0,554.3,257.4,554.3,554.3c0,300.9-261.3,558.3-562.3,552.4C4956.4,652.5,4877.2,638.6,4823.8,622.8z"
+       id="path6"
+       style="fill:#ff0000" /></g></g>
+</svg>

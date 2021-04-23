@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+	public GameObject blood;
 	public static Enemy instance;
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour
 	}
 	public void TakeDamage(int damage)
 	{
+		Instantiate(blood, transform.position, Quaternion.identity);
 		health -= damage;
 
 		if (health <= 0)
@@ -38,7 +40,12 @@ public class Enemy : MonoBehaviour
 		//Instantiate(deathEffect, transform.position, Quaternion.identity);
 		statistics.instance.scoreInt += scoreForDeath;
 		statistics.instance.score.text = "score:" + statistics.instance.scoreInt;
+
+		DropItem();
+		
 		Destroy(gameObject);
+
+		
 	}
 	public GameObject item;
     private void OnDestroy()
