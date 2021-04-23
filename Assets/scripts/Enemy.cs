@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
 		if(item!=null)
 		if (item.GetComponent<dropBullet>() != null)
 		{
-			item.GetComponent<dropBullet>().count = Random.Range(0, 19);
+			item.GetComponent<dropBullet>().count = Random.Range(0, 11);
 			Instantiate(item, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
 		}
 		//else

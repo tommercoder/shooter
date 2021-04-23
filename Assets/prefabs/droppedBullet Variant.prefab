@@ -62,10 +62,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -27.053001
       objectReference: {fileID: 0}
+    - target: {fileID: 270919722018510709, guid: e68961a343d5bfa4698f6391cd96f7ff,
+        type: 3}
+      propertyPath: count
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 270919722018510711, guid: e68961a343d5bfa4698f6391cd96f7ff,
         type: 3}
       propertyPath: m_Name
-      value: droppedBullet
+      value: droppedBullet Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68961a343d5bfa4698f6391cd96f7ff, type: 3}

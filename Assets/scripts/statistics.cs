@@ -38,16 +38,18 @@ public class statistics : MonoBehaviour,ISaveable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("itemDrop"))
+        if (collision.gameObject.CompareTag("bulletDrop"))
         {
-            
+
             bulletsCount += collision.gameObject.GetComponent<dropBullet>().count;
             Destroy(collision.gameObject);
         }
+        else if (collision.gameObject.CompareTag("aidKitDrop"))
+        {
+            playerHealth.instance.currentHealth += collision.gameObject.GetComponent<aidKit>().hp;
+            Destroy(collision.gameObject);
+        }
     }
-
-
-
     public void PopulateSaveData(SaveData sd)
     {
         sd.score = scoreInt;
