@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class playerHealth : MonoBehaviour
 {
@@ -25,21 +26,21 @@ public class playerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-		if(collision.gameObject.CompareTag("FirstAid"))
-        {
+//		if(collision.gameObject.CompareTag("FirstAid"))
+//        {
 
-//            Debug.Log(collision.gameObject.name);
-            if(currentHealth < 100)
-            {
-                currentHealth += 20;
-                Destroy(collision.gameObject);
-            }else{
+////            Debug.Log(collision.gameObject.name);
+//            if(currentHealth < 100)
+//            {
+//                currentHealth += 20;
+//                Destroy(collision.gameObject);
+//            }else{
 
-            }
+//            }
 
             
 
-        }
+//        }
 	}
 
 
@@ -51,11 +52,25 @@ public class playerHealth : MonoBehaviour
         if(currentHealth<=0)
         {
             die();
+            
         }
     }
     void die()
     {
-        
+        List<aidKit> temp = new List<aidKit>();
+        temp = GameObject.FindObjectsOfType<aidKit>().ToList();
+
+        foreach (aidKit d in temp)
+        {
+            Destroy(d);
+        }
+        List<dropBullet> temp1 = new List<dropBullet>();
+        temp1 = GameObject.FindObjectsOfType<dropBullet>().ToList();
+
+        foreach (dropBullet d in temp1)
+        {
+            Destroy(d);
+        }
         SceneManager.LoadScene("SampleScene");
         Destroy(gameObject);
         //show score and buttons

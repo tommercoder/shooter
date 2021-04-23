@@ -16,8 +16,13 @@ public class Enemy : MonoBehaviour
 	public bool kicked = false;
 	public int damage;
 	public int scoreForDeath;
+	public GameObject itemBullets;
+	public GameObject itemAid;
 	private void Start()
 	{
+		
+		
+
 		damage = 10;
 		scoreForDeath = 10;
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -47,15 +52,37 @@ public class Enemy : MonoBehaviour
 
 		
 	}
-	public GameObject item;
-    private void OnDestroy()
+	void DropItem()
     {
-		if(item!=null)
-		if (item.GetComponent<dropBullet>() != null)
+		int rand = Random.Range(1, 2);
+		Debug.Log("RAND" + rand);
+		if (rand == 1)
 		{
-			item.GetComponent<dropBullet>().count = Random.Range(0, 11);
-			Instantiate(item, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+			if (itemBullets != null)
+				if (itemBullets.GetComponent<dropBullet>() != null)
+				{
+					itemBullets.GetComponent<dropBullet>().count = Random.Range(0, 11);
+					Instantiate(itemBullets, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+				}
 		}
+		else if (rand == 2)
+		{
+			if (itemAid != null)
+				if (itemAid.GetComponent<aidKit>() != null)
+				{
+					itemAid.GetComponent<aidKit>().hp = Random.Range(15, 25);
+					Instantiate(itemAid, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+				}
+		}
+		else
+		{
+
+		}
+
+	}
+	private void OnDestroy()
+    {
+		
 		//else
 
 	}

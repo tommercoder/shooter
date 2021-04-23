@@ -26,27 +26,28 @@ public class tempController : MonoBehaviour
   
     void Update()
     {
-        if(Input.GetKeyDown("1"))
+        if(firstWave)
         {
             
-            secondWave = false;
-            thirdWave = false;
-            firstWave = true;
+            //secondWave = false;
+           // thirdWave = false;
+           // firstWave = true;
+          
             anim.SetBool("shotgunAnim", false);
             anim.SetBool("rifleAnim", false);
         }
-        if(Input.GetKeyDown("2"))
+        if(secondWave)
         {
             firstWave = false;
-            secondWave = true;
+           // secondWave = true;
             anim.SetBool("shotgunAnim", true);
             anim.SetBool("rifleAnim", false);
         }
-        if (Input.GetKeyDown("3"))
+        if (thirdWave)
         {
-            firstWave = false;
+           firstWave = false;
             secondWave = false;
-            thirdWave = true;
+          //  thirdWave = true;
             anim.SetBool("rifleAnim", true);
              
         }

@@ -19,12 +19,14 @@ public class aidKit : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        List<aidKit> temp = new List<aidKit>();
-        temp = GameObject.FindObjectsOfType<aidKit>().ToList();
-
-        foreach (aidKit d in temp)
-        {
-            Destroy(d);
-        }
+       // Destroy(gameObject);
+        //List<aidKit> temp;
+        //temp = FindObjectsOfType<aidKit>().ToList();
+        
+        //foreach (aidKit d in temp)
+        //{
+        //    Debug.Log("d" + d);
+        //    Destroy(d);
+        //}
     }
 }

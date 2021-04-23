@@ -18,12 +18,13 @@ public class dropBullet : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        List<dropBullet> temp = new List<dropBullet>();
-        temp = GameObject.FindObjectsOfType<dropBullet>().ToList();
+        //List<dropBullet> temp = new List<dropBullet>();
+        //temp = GameObject.FindObjectsOfType<dropBullet>().ToList();
 
-        foreach(dropBullet d in temp)
-        {
-            Destroy(d);
-        }
+        //foreach(dropBullet d in temp)
+        //{
+        //    Destroy(d);
+        //}
+      //  Destroy(gameObject);
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 270919722018510708}
   m_Layer: 0
   m_Name: droppedBullet
-  m_TagString: bulletDrop
+  m_TagString: itemDrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c616ea3d5273e544e8317dd3e1552b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 2
+  count: 6
 --- !u!61 &270919722018510708
 BoxCollider2D:
   m_ObjectHideFlags: 0

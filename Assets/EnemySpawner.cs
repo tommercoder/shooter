@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        
+        if(!CountTimer.instance.timeOut)
         if(!spawned){
 
             StartCoroutine(SpawnAnEnemy());
@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
         spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
 
         Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
-        Debug.Log("---spawnPos: " + spawnPos);
+       // Debug.Log("---spawnPos: " + spawnPos);
         yield return new WaitForSeconds(time);
         spawned = false;
         //StartCoroutine(SpawnAnEnemy());

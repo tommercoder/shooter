@@ -5,12 +5,17 @@ using UnityEngine;
 public class shooting : MonoBehaviour
 {
 
-    public Transform firePoint1;
+    public GameObject firePoint1;
     public GameObject bullet = null;
+    public GameObject bullet2 = null;
+    public GameObject bullet3 = null;
 
-    public float force1 = 20f; 
+    public float force1 = 20f;
 
-
+    private void Start()
+    {
+        firePoint1 = GameObject.FindGameObjectWithTag("firepoint");
+    }
 
     void Update()
     {
@@ -23,9 +28,26 @@ public class shooting : MonoBehaviour
 
     void shoot()
     {
-        GameObject bulletG = Instantiate(bullet, firePoint1.position, firePoint1.rotation);
-        statistics.instance.bulletsCount -= 1;
-        Rigidbody2D rb = bulletG.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint1.right*force1,ForceMode2D.Impulse);
+        if (tempController.instance.firstWave)
+        {
+            GameObject bulletG = Instantiate(bullet, firePoint1.transform.position, firePoint1.transform.rotation);
+            statistics.instance.bulletsCount -= 1;
+            Rigidbody2D rb = bulletG.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint1.transform.right * force1, ForceMode2D.Impulse);
+        }
+        if (tempController.instance.secondWave)
+        {
+            GameObject bulletG = Instantiate(bullet2, firePoint1.transform.position, firePoint1.transform.rotation);
+            statistics.instance.bulletsCount -= 1;
+            Rigidbody2D rb = bulletG.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint1.transform.right * force1, ForceMode2D.Impulse);
+        }
+        if (tempController.instance.thirdWave)
+        {
+            GameObject bulletG = Instantiate(bullet3, firePoint1.transform.position, firePoint1.transform.rotation);
+            statistics.instance.bulletsCount -= 1;
+            Rigidbody2D rb = bulletG.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint1.transform.right * force1, ForceMode2D.Impulse);
+        }
     }
 }

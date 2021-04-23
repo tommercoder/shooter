@@ -38,16 +38,20 @@ public class statistics : MonoBehaviour,ISaveable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("bulletDrop"))
+        if (collision.gameObject.CompareTag("itemDrop"))
         {
 
             bulletsCount += collision.gameObject.GetComponent<dropBullet>().count;
             Destroy(collision.gameObject);
         }
-        else if (collision.gameObject.CompareTag("aidKitDrop"))
+        else if (collision.gameObject.CompareTag("firstAid"))
         {
-            playerHealth.instance.currentHealth += collision.gameObject.GetComponent<aidKit>().hp;
-            Destroy(collision.gameObject);
+            if (playerHealth.instance.currentHealth <= 200)
+            {
+                playerHealth.instance.currentHealth += collision.gameObject.GetComponent<aidKit>().hp;
+
+                Destroy(collision.gameObject);
+            }
         }
     }
     public void PopulateSaveData(SaveData sd)
@@ -84,5 +88,6 @@ public class statistics : MonoBehaviour,ISaveable
     private void OnApplicationQuit()
     {
         SaveJsonData(this);
+
     }
 }

@@ -8,6 +8,8 @@ TagManager:
   - enemy
   - Map
   - itemDrop
+  - firstAid
+  - firepoint
   layers:
   - Default
   - TransparentFX

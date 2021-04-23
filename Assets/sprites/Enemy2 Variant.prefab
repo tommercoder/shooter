@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 2439043792787047334, guid: 63702ddf10599c2efb66aed117ecdd8c,
         type: 3}
       propertyPath: m_Name
-      value: Enemy2
+      value: Enemy2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2439043792787047334, guid: 63702ddf10599c2efb66aed117ecdd8c,
         type: 3}
@@ -33,6 +33,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2439043792787047335, guid: 63702ddf10599c2efb66aed117ecdd8c,
+        type: 3}
+      propertyPath: itemAid
+      value: 
+      objectReference: {fileID: 2807336859783931549, guid: 7a732ea94efe88844ae14fdc932439be,
+        type: 3}
+    - target: {fileID: 2439043792787047335, guid: 63702ddf10599c2efb66aed117ecdd8c,
+        type: 3}
+      propertyPath: itemBullets
+      value: 
+      objectReference: {fileID: 270919722018510711, guid: e68961a343d5bfa4698f6391cd96f7ff,
+        type: 3}
     - target: {fileID: 2439043792787047359, guid: 63702ddf10599c2efb66aed117ecdd8c,
         type: 3}
       propertyPath: m_RootOrder
