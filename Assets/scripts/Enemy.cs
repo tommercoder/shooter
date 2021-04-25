@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
 		Instantiate(blood, transform.position, Quaternion.identity);
 		health -= damage;
 
+		SoundManagerScript.PlayerSound("SpiderHit");
 		if (health <= 0)
 		{
 
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour
 
 	void Die()
 	{
+		SoundManagerScript.PlayerSound("ZombiHit");
 		//Instantiate(deathEffect, transform.position, Quaternion.identity);
 		statistics.instance.scoreInt += scoreForDeath;
 		statistics.instance.score.text = statistics.instance.scoreInt.ToString();

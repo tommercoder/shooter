@@ -52,13 +52,13 @@ public class movement : MonoBehaviour
 		{
             
 			//Debug.Log("enemy collide with player");
-//			player.GetComponent<Rigidbody2D>().AddForce(transform.forward * 2);
+            //]player.GetComponent<Rigidbody2D>().AddForce(transform.forward * 2);
 
 			
 		}
         else if(collision.gameObject.CompareTag("Map"))
         {
-            Debug.Log(collision.gameObject.name) ;
+            //Debug.Log(collision.gameObject.name) ;
         }
         
 	}

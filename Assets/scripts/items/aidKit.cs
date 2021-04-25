@@ -14,6 +14,7 @@ public class aidKit : MonoBehaviour
     }
     IEnumerator wait()
     {
+        //SoundManagerScript.PlayerSound("CollectItems");
         yield return new WaitForSeconds(6f);
         Destroy(gameObject);
     }
