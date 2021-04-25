@@ -35,10 +35,10 @@ public class CountTimer : MonoBehaviour
                 currentTime = 0;
                 if (tempController.instance.thirdWave && currentTime <= 0)
                 {
-                    countDownText.text = "now just be careful";
+                    //countDownText.text = "now just be careful";
                 }
                 else
-                    countDownText.text = "timeout for 5 secs";
+                    countDownText.text = " ";
                 if (tempController.instance.firstWave )
                 {
                     tempController.instance.secondWave = true;

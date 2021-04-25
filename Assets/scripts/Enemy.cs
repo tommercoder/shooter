@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
 	{
 		//Instantiate(deathEffect, transform.position, Quaternion.identity);
 		statistics.instance.scoreInt += scoreForDeath;
-		statistics.instance.score.text = "score:" + statistics.instance.scoreInt;
+		statistics.instance.score.text = statistics.instance.scoreInt.ToString();
 
 		DropItem();
 		

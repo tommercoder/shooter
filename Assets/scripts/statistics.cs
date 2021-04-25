@@ -26,7 +26,7 @@ public class statistics : MonoBehaviour,ISaveable
         bulletsCount = 100;
 
         LoadJsonData(this);
-        score.text = "score: " + scoreInt;
+        score.text = scoreInt.ToString();
     }
 
     // Update is called once per frame
