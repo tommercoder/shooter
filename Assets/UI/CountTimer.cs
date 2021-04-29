@@ -42,13 +42,13 @@ public class CountTimer : MonoBehaviour
                 if (tempController.instance.firstWave )
                 {
                     tempController.instance.secondWave = true;
-                    currentTime = 60f;
+                    currentTime = 5f;
                     StartCoroutine(wait());
                 }
                  else if (tempController.instance.secondWave && currentTime <=0)
                 {
                     tempController.instance.thirdWave = true;
-                    currentTime = 60f;
+                    currentTime = 5f;
                     
                     StartCoroutine(wait());
                 }
