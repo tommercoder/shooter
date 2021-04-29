@@ -42,13 +42,13 @@ public class CountTimer : MonoBehaviour
                 if (tempController.instance.firstWave )
                 {
                     tempController.instance.secondWave = true;
-                    currentTime = 5f;
+                    currentTime = 60f;
                     StartCoroutine(wait());
                 }
                  else if (tempController.instance.secondWave && currentTime <=0)
                 {
                     tempController.instance.thirdWave = true;
-                    currentTime = 5f;
+                    currentTime = 60f;
                     
                     StartCoroutine(wait());
                 }
@@ -63,7 +63,7 @@ public class CountTimer : MonoBehaviour
     IEnumerator wait()
     {
         timeOut = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
        
         timeOut = false;
     }
