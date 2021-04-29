@@ -15,6 +15,11 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< Updated upstream
+=======
+       if (GameObject.Find("player") != null) 
+            player = GameObject.Find("player").transform;
+>>>>>>> Stashed changes
         rb = this.GetComponent<Rigidbody2D>();
     }
 
