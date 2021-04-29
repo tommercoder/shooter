@@ -11,6 +11,8 @@ public class movement : MonoBehaviour
     Vector2 mousePosV;
     Vector2 moveVector;
 
+    public Joystick joystick;
+    public Joystick joystickRot;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,13 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //keyboard
         moveVector.x = Input.GetAxisRaw("Horizontal");
-        moveVector.y= Input.GetAxisRaw("Vertical");
+        moveVector.y= Input.GetAxisRaw("Vertical"); 
+        
+        
+        //moveVector.x = joystick.Horizontal;
+        //moveVector.y= joystick.Vertical;
        
        ///// animator.SetFloat("Horizontal", moveVector.x);
         //animator.SetFloat("Vertical", moveVector.y);
@@ -35,13 +42,28 @@ public class movement : MonoBehaviour
         //Debug.Log(cam.ScreenToWorldPoint(mousePos));
         mousePosV = cam.ScreenToWorldPoint(mousePos);
     }
+    public bool flipRot = true;
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveVector * speed * Time.fixedDeltaTime);
+       
+       /////////////////////////////////////////////
+       //mobile
+        //float horizontal = joystickRot.Horizontal;
+        //float vertical = joystickRot.Vertical;
+
+        //float angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg - 90;
+        //angle = flipRot ? -angle : angle;
+
+        //rb.rotation = angle;
+
+        ///////////////////////////////
+        //pc movement
         
-        Vector2 lookdir = mousePosV - rb.position;
-        float angle = Mathf.Atan2(lookdir.y,lookdir.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+            Vector2 lookdir = mousePosV - rb.position;
+            float angle2 = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg;
+            rb.rotation = angle2;
+        
 
 
     }

@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
 	}
 	void DropItem()
     {
-		int rand = Random.Range(1, 2);
+		int rand = Random.Range(1, 3);
 		Debug.Log("RAND" + rand);
 		if (rand == 1)
 		{

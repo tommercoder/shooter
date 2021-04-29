@@ -9,7 +9,7 @@ public class shooting : MonoBehaviour
     public GameObject bullet = null;
     public GameObject bullet2 = null;
     public GameObject bullet3 = null;
-
+    Joystick shootJoystick;
     public float force1 = 20f;
 
     private void Start()
@@ -19,7 +19,12 @@ public class shooting : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && statistics.instance.bulletsCount > 0)
+        
+        if (Input.GetButtonDown("Fire1") && statistics.instance.bulletsCount > 0)
+        {
+            shoot();
+        }
+        else if (Input.touchCount>0 && Input.touches[0].phase==TouchPhase.Began && statistics.instance.bulletsCount > 0)
         {
             shoot();
         }
