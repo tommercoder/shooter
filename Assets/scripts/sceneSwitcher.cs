@@ -8,6 +8,7 @@ public class sceneSwitcher : MonoBehaviour
     public void OpenScene(int index)
     {
         SceneManager.LoadScene(index);
+        SoundManagerScript.PlayerSound("BackSong");
     }
 
     public void ExitButton()

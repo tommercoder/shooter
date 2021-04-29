@@ -13,6 +13,7 @@ public class dropBullet : MonoBehaviour
     }
     IEnumerator wait()
     {
+        
         yield return new WaitForSeconds(10f);
         Destroy(gameObject);
     }

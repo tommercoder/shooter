@@ -63,7 +63,7 @@ public class CountTimer : MonoBehaviour
     IEnumerator wait()
     {
         timeOut = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
        
         timeOut = false;
     }

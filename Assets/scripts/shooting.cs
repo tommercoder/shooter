@@ -28,6 +28,9 @@ public class shooting : MonoBehaviour
 
     void shoot()
     {
+
+        SoundManagerScript.PlayerSound("fire");
+
         if (tempController.instance.firstWave)
         {
             GameObject bulletG = Instantiate(bullet, firePoint1.transform.position, firePoint1.transform.rotation);

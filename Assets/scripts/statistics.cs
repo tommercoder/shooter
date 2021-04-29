@@ -40,7 +40,7 @@ public class statistics : MonoBehaviour,ISaveable
     {
         if (collision.gameObject.CompareTag("itemDrop"))
         {
-
+            SoundManagerScript.PlayerSound("CollectItems");
             bulletsCount += collision.gameObject.GetComponent<dropBullet>().count;
             Destroy(collision.gameObject);
         }
@@ -48,6 +48,7 @@ public class statistics : MonoBehaviour,ISaveable
         {
             if (playerHealth.instance.currentHealth <= 200)
             {
+                SoundManagerScript.PlayerSound("CollectItems");
                 playerHealth.instance.currentHealth += collision.gameObject.GetComponent<aidKit>().hp;
 
                 Destroy(collision.gameObject);

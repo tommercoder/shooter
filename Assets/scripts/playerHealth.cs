@@ -15,7 +15,9 @@ public class playerHealth : MonoBehaviour
         instance = this;
     }
     public int currentHealth;
-    public int maxHealth;
+    public int maxHealth; 
+    public GameObject deathMenuUI;
+    public TMPro.TextMeshProUGUI score;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +75,15 @@ public class playerHealth : MonoBehaviour
         }
         SceneManager.LoadScene("SampleScene");
         Destroy(gameObject);
-        //show score and buttons
-        //save score and what we need to save
+
+        gameObject.SetActive(false);
+        deathMenuUI.SetActive(true); 
+        score.enabled = false;
+        score.SetText("SCORE: " + statistics.instance.scoreInt.ToString());
+        score.ForceMeshUpdate(true);
+        score.enabled = true;
+
+
     }
+
 }
