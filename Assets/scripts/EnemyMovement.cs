@@ -16,6 +16,12 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
 
+       if (GameObject.Find("player") != null) 
+            player = GameObject.Find("player").transform;
+        Stashed changes
+        rb = this.GetComponent<Rigidbody2D>();
+    }
+
       player = GameObject.Find("player").transform;
        rb = this.GetComponent<Rigidbody2D>();
     }
