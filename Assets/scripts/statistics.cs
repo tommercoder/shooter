@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-
-public class statistics : MonoBehaviour,ISaveable
+public class statistics : MonoBehaviour
 {
+
     #region singleton
     public static statistics instance;
     private void Awake()
@@ -18,6 +19,7 @@ public class statistics : MonoBehaviour,ISaveable
     public int scoreInt;
     public int bulletsCount;
     public int currentRecord;
+    public TMP_Text textRecord;
     [Header("UI")]
     public Text bulletText;
     // Start is called before the first frame update
@@ -25,14 +27,28 @@ public class statistics : MonoBehaviour,ISaveable
     {
         bulletsCount = 100;
 
-        LoadJsonData(this);
-        score.text = scoreInt.ToString();
+       LoadJsonData(this);
+       score.text = scoreInt.ToString();
+       textRecord.text = "current record:" + currentRecord;
     }
 
     // Update is called once per frame
     void Update()
     {
         bulletText.text = bulletsCount.ToString();
+        if(scoreInt > currentRecord)
+        {
+            textRecord.text = "current record:" + scoreInt;
+        }
+        else
+        {
+            textRecord.text = "current record:" + currentRecord;
+        }
+
+        if(pauseMenu.instance.GameIsPaused)
+        {
+            SaveJsonData(this);
+        }
         //score.text = "score:"+  scoreInt.ToString();
     }
 
@@ -54,14 +70,6 @@ public class statistics : MonoBehaviour,ISaveable
                 Destroy(collision.gameObject);
             }
         }
-    }
-    public void PopulateSaveData(SaveData sd)
-    {
-        sd.score = scoreInt;
-    }
-    public void LoadFromSaveData(SaveData sd)
-    {
-        currentRecord = sd.score;
     }
     public void SaveJsonData(statistics s)
     {
@@ -90,5 +98,27 @@ public class statistics : MonoBehaviour,ISaveable
     {
         SaveJsonData(this);
 
+    }
+    public void PopulateSaveData(SaveData sd)
+    {
+        
+        if (scoreInt > currentRecord)
+        {
+            sd.score = scoreInt;
+            Debug.Log("Saved score " + scoreInt);
+        }
+        else
+        {
+            sd.score = currentRecord;
+        }
+        
+        //
+
+
+    }
+    public void LoadFromSaveData(SaveData sd)
+    {
+        
+        currentRecord = sd.score;
     }
 }

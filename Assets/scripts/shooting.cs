@@ -33,7 +33,8 @@ public class shooting : MonoBehaviour
 
     void shoot()
     {
-
+        if (pauseMenu.instance.GameIsPaused)
+            return;
         SoundManagerScript.PlayerSound("fire");
 
         if (tempController.instance.firstWave)

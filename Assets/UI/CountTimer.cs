@@ -11,10 +11,10 @@ public class CountTimer : MonoBehaviour
         instance = this;
     }
     float currentTime = 0;
-    float startingTime = 5;
+    float startingTime = 20;
 
     public bool timeOut = false;
-
+    public Image timerIcon;
     [SerializeField] Text countDownText;
 
     // Start is called before the first frame update
@@ -35,6 +35,8 @@ public class CountTimer : MonoBehaviour
                 currentTime = 0;
                 if (tempController.instance.thirdWave && currentTime <= 0)
                 {
+                    
+                    
                     //countDownText.text = "now just be careful";
                 }
                 else
@@ -42,22 +44,23 @@ public class CountTimer : MonoBehaviour
                 if (tempController.instance.firstWave )
                 {
                     tempController.instance.secondWave = true;
-                    currentTime = 5f;
+                    currentTime = 40f;
                     StartCoroutine(wait());
                 }
                  else if (tempController.instance.secondWave && currentTime <=0)
                 {
                     tempController.instance.thirdWave = true;
-                    currentTime = 5f;
+                    currentTime = 60f;
                     
                     StartCoroutine(wait());
                 }
                 
             }
+            timerIcon.color = Color.white;
         }
         else if(timeOut )
         {
-           
+            timerIcon.color = Color.green;
         }
     }
     IEnumerator wait()

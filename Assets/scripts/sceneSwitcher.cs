@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class sceneSwitcher : MonoBehaviour
 {
+   
     public void OpenScene(int index)
     {
         SceneManager.LoadScene(index);
@@ -16,4 +17,7 @@ public class sceneSwitcher : MonoBehaviour
         Application.Quit();
         Debug.Log("Game closed");
     }
+
+    
+    
 }

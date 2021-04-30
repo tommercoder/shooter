@@ -26,6 +26,7 @@ public class FileManager : MonoBehaviour
 
     public static bool LoadFromFile(string a_FileName, out string result)
     {
+        Debug.Log(Application.persistentDataPath);
         var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
         //File.Create(fullPath);
         try

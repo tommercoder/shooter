@@ -24,6 +24,8 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pauseMenu.instance.GameIsPaused)
+            return;
         //keyboard
         moveVector.x = Input.GetAxisRaw("Horizontal");
         moveVector.y= Input.GetAxisRaw("Vertical"); 

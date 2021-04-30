@@ -29,6 +29,8 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pauseMenu.instance.GameIsPaused)
+            return;
         if (player != null)
         {
             Vector3 direction = player.position - transform.position;
