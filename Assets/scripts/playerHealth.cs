@@ -17,6 +17,8 @@ public class playerHealth : MonoBehaviour
     public int currentHealth;
     public int maxHealth; 
     public GameObject deathMenuUI;
+    public GameObject UI;
+    public GameObject canvasJS;
     public TMPro.TextMeshProUGUI score;
     // Start is called before the first frame update
     void Start()
@@ -73,10 +75,13 @@ public class playerHealth : MonoBehaviour
         {
             Destroy(d);
         }
-        SceneManager.LoadScene("SampleScene");
-        Destroy(gameObject);
+        //SceneManager.LoadScene("SampleScene");
+        //Destroy(gameObject);
 
+        Time.timeScale = 0f;
         gameObject.SetActive(false);
+        UI.SetActive(false);
+        canvasJS.SetActive(false);
         deathMenuUI.SetActive(true); 
         score.enabled = false;
         score.SetText("SCORE: " + statistics.instance.scoreInt.ToString());

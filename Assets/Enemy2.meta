@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Enemy2.meta
 guid: e8710aeebfc8df88b8d99c6732f630c5
+=======
+guid: d94f4b940adc837f19cf5de4b6e02c2b
+>>>>>>> origin/byretLastCopy:Assets/Item.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
