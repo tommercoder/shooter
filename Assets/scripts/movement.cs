@@ -51,7 +51,7 @@ public class movement : MonoBehaviour
 
         /////////////////////////////////////////////
         //mobile
-        if (joystickRot.Horizontal > 0 || joystick.Vertical > 0 || joystickRot.Horizontal < 0 || joystick.Vertical < 0)
+        if (joystickRot.Horizontal > 0 || joystickRot.Vertical > 0 || joystickRot.Horizontal < 0 || joystickRot.Vertical < 0)
         {
             float horizontal = joystickRot.Horizontal;
             float vertical = joystickRot.Vertical;
