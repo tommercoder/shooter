@@ -27,14 +27,14 @@ public class movement : MonoBehaviour
         if (pauseMenu.instance.GameIsPaused)
             return;
         //keyboard
-        moveVector.x = Input.GetAxisRaw("Horizontal");
-        moveVector.y= Input.GetAxisRaw("Vertical"); 
+        //moveVector.x = Input.GetAxisRaw("Horizontal");
+        //moveVector.y= Input.GetAxisRaw("Vertical"); 
         
         
-        //moveVector.x = joystick.Horizontal;
-        //moveVector.y= joystick.Vertical;
+        moveVector.x = joystick.Horizontal;
+        moveVector.y= joystick.Vertical;
        
-       ///// animator.SetFloat("Horizontal", moveVector.x);
+        //animator.SetFloat("Horizontal", moveVector.x);
         //animator.SetFloat("Vertical", moveVector.y);
         animator.SetFloat("Speed", moveVector.sqrMagnitude);
 
@@ -48,23 +48,25 @@ public class movement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveVector * speed * Time.fixedDeltaTime);
-       
-       /////////////////////////////////////////////
-       //mobile
-        //float horizontal = joystickRot.Horizontal;
-        //float vertical = joystickRot.Vertical;
 
-        //float angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg - 90;
-        //angle = flipRot ? -angle : angle;
+        /////////////////////////////////////////////
+        //mobile
+        if (joystickRot.Horizontal > 0 || joystick.Vertical > 0 || joystickRot.Horizontal < 0 || joystick.Vertical < 0)
+        {
+            float horizontal = joystickRot.Horizontal;
+            float vertical = joystickRot.Vertical;
 
-        //rb.rotation = angle;
+            float angle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg - 90;
+            angle = flipRot ? -angle : angle;
 
+            rb.rotation = angle;
+        }
         ///////////////////////////////
         //pc movement
         
-            Vector2 lookdir = mousePosV - rb.position;
-            float angle2 = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg;
-            rb.rotation = angle2;
+            //Vector2 lookdir = mousePosV - rb.position;
+            //float angle2 = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg;
+            //rb.rotation = angle2;
         
 
 
